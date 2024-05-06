@@ -37,3 +37,5 @@ tomcat/
 run.bat
 resolvedPom.xml
 */resolvedPom.xml
+/logs/pm-auth.log
+/logs/pm-auth-error.log

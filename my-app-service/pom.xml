@@ -27,32 +27,28 @@
         </dependency>
 
         <!--   Spring Framework    -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-bootstrap</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.casbin</groupId>
-            <artifactId>casbin-spring-boot-starter</artifactId>
-            <version>${casbin-spring-boot-starter.version}</version>
-            <exclusions>
-                <exclusion>
-                    <artifactId>jcasbin</artifactId>
-                    <groupId>org.casbin</groupId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-bootstrap</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.casbin</groupId>-->
+<!--            <artifactId>casbin-spring-boot-starter</artifactId>-->
+<!--            <version>${casbin-spring-boot-starter.version}</version>-->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <artifactId>jcasbin</artifactId>-->
+<!--                    <groupId>org.casbin</groupId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-data-redis</artifactId>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-consul-all</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -67,21 +63,21 @@
         </dependency>
 
         <!--    Third Party    -->
-        <dependency>
-            <groupId>org.casbin</groupId>
-            <artifactId>jcasbin</artifactId>
-            <version>${jcasbin.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.casbin</groupId>-->
+<!--            <artifactId>jcasbin</artifactId>-->
+<!--            <version>${jcasbin.version}</version>-->
+<!--        </dependency>-->
 
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-activemq</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>activemq-pool</artifactId>
-            <version>5.12.1</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-activemq</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.activemq</groupId>-->
+<!--            <artifactId>activemq-pool</artifactId>-->
+<!--            <version>5.12.1</version>-->
+<!--        </dependency>-->
 
     </dependencies>
 
