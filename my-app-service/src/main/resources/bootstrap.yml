@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: my-app
+  cloud:
+    consul:
+      config:
+        format: YAML
+      discovery:
+        metadata:
+          contextPath: /${spring.application.name}

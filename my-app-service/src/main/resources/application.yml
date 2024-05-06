@@ -1,0 +1,68 @@
+server:
+  servlet:
+    context-path: /${spring.application.name}
+  port: 8015
+  tomcat:
+    threads:
+      max: 400
+      min-spare: 100
+    accept-count: 1000
+
+logging:
+  level:
+    org.springframework.data.mongodb.core: DEBUG
+  config: classpath:logback-spring.xml
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  servlet:
+    multipart:
+      max-request-size: 512MB
+      max-file-size: 512MB
+  jackson:
+    date-format: yyyy-MM-dd'T'HH:mm:ss.SSSXXX
+    time-zone: Asia/Shanghai
+  mvc:
+    format:
+      date: yyyy-MM-dd'T'HH:mm:ss.SSSXXX
+      date-time: yyyy-MM-dd'T'HH:mm:ss.SSSXXX
+  data:
+    web:
+      pageable:
+        default-page-size: 20
+        max-page-size: 1000
+  activemq:
+    broker-url: tcp://172.17.253.119:61616  #activeMQ的ip和端口号
+    user: admin   #activeMq账号
+    password: admin #activeMq密码
+    queue-name: pm-msg.queue #消息队列
+    topic-name: pm-msg.topic #消息广播
+    pool:
+      enabled: true       #连接池启动
+      max-connections: 10 #最大连接数
+    #本地开发关闭jms
+    jms:
+      enable: true
+      consumer: true
+
+
+#延迟30秒注册APP
+emop:
+  app-info:
+    lazy-register-in-second: 40
+
+
+casbin:
+  enableCasbin: true
+  useSyncedEnforcer: false
+  autoSave: false
+  storeType: file
+  #initializeSchema: create
+  model: classpath:casbin/model.conf
+  useDefaultModelIfModelNotSetting: true
+  policy: classpath:casbin/policy.csv
+  enableWatcher: false
+  watcherType: redis
+  exception:
+    removePolicyFailed: false

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.mchen2</groupId>
+    <artifactId>my-app</artifactId>
+    <version>${app.version}-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>my-app</name>
+    <description>my-app</description>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.4.6</version>
+        <relativePath/>
+    </parent>
+
+    <properties>
+        <maven.repo.release.id>rdc-releases</maven.repo.release.id>
+        <maven.repo.release.url>https://packages.aliyun.com/maven/repository/2285299-release-HXKBj8/</maven.repo.release.url>
+        <maven.repo.snapshot.id>rdc-snapshots</maven.repo.snapshot.id>
+        <maven.repo.snapshot.url>https://packages.aliyun.com/maven/repository/2285299-snapshot-DbWNvg/</maven.repo.snapshot.url>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>11</java.version>
+        <spring-cloud.version>2020.0.4</spring-cloud.version>
+        <emop.environment.version>2.6-SNAPSHOT</emop.environment.version>
+        <guava.version>31.1-jre</guava.version>
+        <springfox-boot-starter.version>3.0.0</springfox-boot-starter.version>
+        <log4j-to-slf4j.version>2.15.0</log4j-to-slf4j.version>
+        <gson.version>2.10.1</gson.version>
+        <app.version>1.0.2</app.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>${springfox-boot-starter.version}</version>
+        </dependency>
+
+        <!-- EMOP平台依赖 -->
+<!--        <dependency>-->
+<!--            <groupId>com.eingsoft.emop</groupId>-->
+<!--            <artifactId>environment</artifactId>-->
+<!--            <version>${emop.environment.version}</version>-->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <artifactId>guava</artifactId>-->
+<!--                    <groupId>com.google.guava</groupId>-->
+<!--                </exclusion>-->
+<!--                <exclusion>-->
+<!--                    <artifactId>log4j-to-slf4j</artifactId>-->
+<!--                    <groupId>org.apache.logging.log4j</groupId>-->
+<!--                </exclusion>-->
+<!--                <exclusion>-->
+<!--                    <groupId>com.google.code.gson</groupId>-->
+<!--                    <artifactId>gson</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-to-slf4j</artifactId>
+            <version>${log4j-to-slf4j.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok-mapstruct-binding</artifactId>
+            <version>0.2.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>11</source>
+                    <target>11</target>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>com.sap.prd.mobile.ios.maven.plugins</groupId>
+                <artifactId>resolve-pom-maven-plugin</artifactId>
+                <version>1.0</version>
+                <executions>
+                    <execution>
+                        <id>resolve-pom-props</id>
+                        <goals>
+                            <goal>resolve-pom-props</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <repositories>
+        <repository>
+            <id>${maven.repo.release.id}</id>
+            <url>${maven.repo.release.url}</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>${maven.repo.snapshot.id}</id>
+            <url>${maven.repo.snapshot.url}</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>${maven.repo.release.id}</id>
+            <url>${maven.repo.release.url}</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>${maven.repo.snapshot.id}</id>
+            <url>${maven.repo.snapshot.url}</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
+    <distributionManagement>
+        <repository>
+            <id>${maven.repo.release.id}</id>
+            <url>${maven.repo.release.url}</url>
+        </repository>
+        <snapshotRepository>
+            <id>${maven.repo.snapshot.id}</id>
+            <url>${maven.repo.snapshot.url}</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <modules>
+        <module>my-app-api</module>
+        <module>my-app-service</module>
+    </modules>
+
+</project>
