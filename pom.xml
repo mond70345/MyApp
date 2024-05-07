@@ -61,6 +61,12 @@
             <version>${springfox-boot-starter.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.11</version>
+        </dependency>
+
         <!-- EMOP平台依赖 -->
 <!--        <dependency>-->
 <!--            <groupId>com.eingsoft.emop</groupId>-->
