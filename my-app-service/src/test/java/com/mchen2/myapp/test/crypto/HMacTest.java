@@ -1,4 +1,4 @@
-package com.mchen2.myapp.test;
+package com.mchen2.myapp.test.crypto;
 
 import cn.hutool.core.util.StrUtil;
 import cn.hutool.crypto.SecureUtil;
@@ -7,12 +7,9 @@ import cn.hutool.crypto.digest.HmacAlgorithm;
 import org.junit.jupiter.api.Test;
 
 import javax.crypto.Mac;
-import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
-import java.nio.charset.StandardCharsets;
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
 
 public class HMacTest {
 

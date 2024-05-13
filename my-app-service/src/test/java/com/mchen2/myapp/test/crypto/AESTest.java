@@ -1,4 +1,4 @@
-package com.mchen2.myapp.test;
+package com.mchen2.myapp.test.crypto;
 
 import org.junit.jupiter.api.Test;
 

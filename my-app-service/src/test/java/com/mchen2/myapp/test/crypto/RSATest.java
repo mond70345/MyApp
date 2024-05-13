@@ -1,15 +1,11 @@
-package com.mchen2.myapp.test;
+package com.mchen2.myapp.test.crypto;
 
 import cn.hutool.core.codec.Base16Codec;
 import org.junit.jupiter.api.Test;
-import org.springframework.util.Base64Utils;
 
 import javax.crypto.Cipher;
-import java.io.ByteArrayOutputStream;
 import java.nio.charset.StandardCharsets;
 import java.security.*;
-import java.security.spec.PKCS8EncodedKeySpec;
-import java.security.spec.X509EncodedKeySpec;
 import java.util.Base64;
 
 public class RSATest {

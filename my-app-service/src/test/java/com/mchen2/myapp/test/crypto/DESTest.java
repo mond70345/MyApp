@@ -1,15 +1,11 @@
-package com.mchen2.myapp.test;
+package com.mchen2.myapp.test.crypto;
 
 import org.junit.jupiter.api.Test;
 
 import javax.crypto.*;
 import javax.crypto.spec.DESKeySpec;
 import java.security.GeneralSecurityException;
-import java.security.InvalidKeyException;
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
-import java.sql.SQLOutput;
 import java.util.Base64;
 
 public class DESTest {

@@ -1,4 +1,4 @@
-package com.mchen2.myapp.test;
+package com.mchen2.myapp.test.crypto;
 
 import cn.hutool.core.codec.Base64;
 import cn.hutool.crypto.digest.BCrypt;
