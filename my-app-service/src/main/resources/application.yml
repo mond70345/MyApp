@@ -46,3 +46,7 @@ spring:
           password: ${spring.redis.password}
           address: redis://${spring.redis.host}:${spring.redis.port}
           database: 6
+
+lock4j:
+  acquire-timeout: 10000
+  expire: 30000
